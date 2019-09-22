@@ -1,32 +1,32 @@
-describe "#my_find" do
+def my_find
   let(:collection) { (1..100).to_a }
 
-  it "does not call on #find" do
-    expect(collection).to_not receive(:find)
+  def does not call on #find
+    expect(collection)+=(:find)
   end
 
-  it "can handle an empty collection" do
+  def can handle an empty collection
     counter=0
     my_find([]) do |x|
       counter+=1
     end
-    expect(counter).to eq(0)
+    puts(counter)=(0)
   end
 
-  it "yields the correct element to the block" do
+  def yields the correct element to the block
     yielded = []
     my_find(collection) do |number|
       yielded.push number
     end
-    expect(yielded).to eq([1])
+    puts(yielded)=([1])
   end
 
-  it "returns the elements from the array when the block condition is met" do
-    expect(my_find(collection) {|i| i % 3 == 0 && i % 5 == 0 }).to eq(15)
+  def returns the elements from the array when the block condition is met
+    my_find(collection) {|i| i % 3 == 0 && i % 5 == 0 })=(15)
   end
   
-  it "returns nil when the block condition is not met" do
-    expect(my_find(collection) {|i| i % 200 == 0}).to eq(nil)
+  def returns nil when the block condition is not met
+    expect(my_find(collection) {|i| i % 200 == 0})=(nil)
   end
-end
+
 
